@@ -1,0 +1,118 @@
+/* src/componentes/Contacto/Contacto.css */
+.contacto-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    height: 100vh;
+    background: linear-gradient(to bottom, #1E90FF, #00008B); /* Fondo degradado */
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .contacto-container h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .contacto-form {
+    width: 80%;
+    max-width: 500px;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    color: #333;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    outline: none;
+  }
+  
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: #1e90ff;
+    box-shadow: 0 0 5px rgba(30, 144, 255, 0.5);
+  }
+  
+  .btn-enviar {
+    display: block;
+    width: 100%;
+    background-color: #1e90ff;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+  }
+  
+  .btn-enviar:hover {
+    background-color: #00008b;
+  }
+  
+  /* Estilos para el contenedor de WhatsApp */
+  .whatsapp-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+  }
+  
+  .whatsapp-logo {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+  
+  .whatsapp-number {
+    font-size: 1rem;
+    color: #fff;
+    font-weight: bold;
+  }
+
+  .success-message {
+    color: green;
+    margin-top: 1rem;
+}
+
+.error-message {
+    color: red;
+    margin-top: 1rem;
+}
+
+  
+  @media (max-width: 768px) {
+    .contacto-form {
+      width: 95%;
+    }
+  
+    .whatsapp-logo {
+      width: 25px;
+      height: 25px;
+    }
+  
+    .whatsapp-number {
+      font-size: 0.9rem;
+    }
+  }
+  

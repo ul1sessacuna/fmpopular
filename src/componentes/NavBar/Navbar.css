@@ -1,0 +1,85 @@
+/* Navbar general */
+.custom-navbar {
+  position: fixed;
+  top: 10px; /* Fijado en la parte superior */
+  left: 0;
+  font-size: 1.2rem;
+  font-family: 'Poppins', sans-serif;
+  width: 100%;
+  background-color: transparent; /* Fondo transparente */
+  display: flex;
+  justify-content: center; /* Centra el contenido horizontalmente */
+  align-items: center;
+  height: 60px; /* Altura del navbar */
+  z-index: 1000;
+}
+
+/* Contenedor del Navbar */
+.navbar-container {
+  display: flex;
+  justify-content: center; /* Centrado horizontal */
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Estilos del menú */
+.nav-links {
+  display: flex;
+  gap: 90px; 
+  list-style: none;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilos de cada enlace */
+.nav-link {
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+}
+
+.custom-navbar:hover {
+  color: #cccccc; 
+}
+
+/* Menú desplegable para móviles */
+.menu-toggle {
+  display: none; /* Ocultar botón en pantallas grandes */
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .menu-toggle {
+      display: block; /* Mostrar el botón en pantallas pequeñas */
+  }
+
+  .nav-links {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      background-color: rgba(32, 0, 92, 0.9);
+  
+  }
+
+  .nav-links.nav-active {
+      display: flex;
+      gap: 10px;
+  }
+
+  .nav-link {
+      text-align: center;
+      padding: 3px 0; /* Reducir el espacio vertical entre enlaces */
+      margin: 0; /* Asegurar que no haya margen adicional */
+      font-size: 1rem; /* Opcional: ajustar el tamaño de fuente */
+  }
+}

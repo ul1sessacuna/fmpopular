@@ -1,0 +1,39 @@
+.programas-container {
+  height: 100vh; /* Asegura que ocupe toda la altura de la ventana */
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.8), 
+      rgba(0, 0, 0, 0.8)
+    ), 
+    url('https://images.pexels.com/photos/6878174/pexels-photo-6878174.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); /* Cambia por la ruta de tu imagen */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+h2 {
+
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 70px 0 30px 0;
+}
+
+.table-dark th, 
+.table-dark td {
+  color: #fff;
+}
+
+/* Opcional: haz que la tabla sea más visible en el fondo */
+.table-responsive {
+
+  padding: 20px;
+  border-radius: 10px;
+}

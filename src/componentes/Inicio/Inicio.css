@@ -1,0 +1,146 @@
+
+
+.inicio-container {
+   position: relative; 
+  background: url('https://images.pexels.com/photos/3783471/pexels-photo-3783471.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat center center fixed;
+  background-size: cover; /* La imagen cubre toda la pantalla */
+  min-height: 100vh; /* Ocupa toda la altura de la ventana */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(30, 144, 255, 0.6 ), rgba(0, 0, 139, 0.9));
+  z-index: 1; /* La superposición está sobre la imagen */
+}
+
+.content {
+  position: relative;
+  z-index: 2; /* El contenido está encima del degradado */
+  text-align: center;
+  color: #fff;
+}
+
+
+
+.text-container p {
+  font-size: 3rem;
+  font-weight: 300;
+  margin-bottom: 2rem;
+  font-family: 'Poppins', sans-serif;
+  color: #ffffff;
+  text-shadow: 
+    1px 3px 4px rgba(0, 0, 0, 1),  /* Sombra sutil */
+    2px 2px 5px rgba(0, 0, 0, 3),  /* Sombra de mayor tamaño */
+    3px 3px 10px rgba(0, 0, 0, 0); /* Sombra profunda */
+    opacity: 0;
+    transform: translateY(20px); /* Comienza un poco más abajo */
+    animation: slideIn 0.8s ease-out forwards; /* Animación */
+}
+
+.text-container p:hover {
+  color: #3498db;
+  transform: translateY(-3px);
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0); /* El texto sube hasta su posición original */
+  }
+}
+
+
+
+
+.button-container .play-button {
+  padding: 10px 20px;
+  width: 20vw;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #0f000c;
+  background: #ffffff;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+.button-container .play-button:hover {
+  background: #dbdbdb;
+}
+
+.player-container iframe {
+  width: 90%;
+  max-width: 400px;
+  height: 110px;
+}
+
+.social-media-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 70px;
+}
+
+.social-media-container a {
+  color: #fff;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+
+.social-media-container a:hover {
+  color: #1e90ff;
+}
+
+.social-icon {
+  font-size: 2rem;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .text-container h1 {
+      font-size: 2.5rem;
+  }
+   
+  .button-container .play-button {
+    width: 50vw;
+  }
+  .text-container p {
+      font-size: 1.6rem;
+  }
+
+  .button-container .play-button {
+      font-size: 1rem;
+  }
+
+  .social-icon {
+      font-size: 1.5rem;
+  }
+}
+
+
+.logo-animado {
+  width: 300px;
+  height: auto;
+  animation: mover 2s infinite; /* Agregar animación */
+}
+
+/* Animación del logo */
+@keyframes mover {
+  0%, 100% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-10px);
+  }
+}
