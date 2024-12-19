@@ -10,12 +10,11 @@ function App() {
   return (
     <Router>
       <Navbar />
-
       <Routes>
+        <Route path="/" element={<Inicio />} />  {/* Ruta predeterminada */}
         <Route path="/inicio" element={<Inicio />} />
         <Route path="/programas" element={<Programas />} />
         <Route path="/noticias" element={<Noticias />} />
-
         <Route path="/contacto" element={<Contacto />} />
       </Routes>
     </Router>
