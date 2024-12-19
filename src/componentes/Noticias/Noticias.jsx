@@ -12,7 +12,15 @@ const Noticias = () => {
                     'https://newsapi.org/v2/top-headlines?country=us&apiKey=135c931cfcab4ad7b2fc15104dc1f884'
                 );
                 const data = await response.json();
-                setNoticias(data.articles);
+
+                // Verificar si 'articles' existe y es un arreglo
+                if (Array.isArray(data.articles)) {
+                    setNoticias(data.articles);
+                } else {
+                    console.error('Datos de noticias no válidos');
+                    setNoticias([]);
+                }
+
                 setCargando(false);
             } catch (error) {
                 console.error('Error al obtener las noticias:', error);
@@ -27,7 +35,7 @@ const Noticias = () => {
         return <div className="cargando">Cargando noticias...</div>;
     }
 
-    if (noticias.length === 0) {
+    if (!noticias || noticias.length === 0) {
         return <div className="sin-noticias">No hay noticias disponibles.</div>;
     }
 
