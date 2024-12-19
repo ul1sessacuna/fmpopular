@@ -120,6 +120,7 @@
   }
   .text-container p {
       font-size: 1.6rem;
+      font-family: 'Poppins', sans-serif;
   }
 
   .button-container .play-button {
