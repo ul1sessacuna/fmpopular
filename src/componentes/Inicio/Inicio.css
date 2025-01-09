@@ -2,7 +2,7 @@
 
 
 
-.inicio-container {
+.inicio-container { 
    position: relative; 
   background: url('https://images.pexels.com/photos/3783471/pexels-photo-3783471.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat center center fixed;
   background-size: cover; /* La imagen cubre toda la pantalla */
@@ -27,6 +27,7 @@
 }
 
 .content {
+  margin-top: 60px;
   position: relative;
   z-index: 2; /* El contenido está encima del degradado */
   text-align: center;
@@ -51,7 +52,6 @@
 }
 
 .text-container p:hover {
-  color: #3498db;
   transform: translateY(-3px);
 }
 
@@ -148,4 +148,25 @@
   50% {
       transform: translateY(-10px);
   }
+}
+
+
+.locutor-container {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.locutor-foto {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.locutor-nombre {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
 }

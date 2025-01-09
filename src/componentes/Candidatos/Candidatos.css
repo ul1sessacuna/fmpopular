@@ -1,0 +1,104 @@
+/* Contenedor principal */
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #1E90FF, #00008B); /* Fondo degradado */
+    color: #fff; /* Texto blanco para contraste */
+}
+
+/* Contenedor principal */
+.container {
+
+    max-width: 1200px;
+    margin-top: 50px;
+    padding: 20px;
+    color: #fff;
+}
+
+/* Título */
+.title {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+/* Tarjeta del candidato */
+.card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    color: #333;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Imagen del candidato */
+.card-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: 20px;
+    flex-shrink: 0;
+}
+
+/* Contenido del candidato */
+.card-content {
+    flex: 1;
+    text-align: left;
+}
+
+/* Nombre del candidato */
+.card-name {
+    font-size: 24px;
+    margin: 0 0 10px;
+    color: #222;
+}
+
+/* Información del candidato */
+.card-info {
+    font-size: 16px;
+    margin: 0 0 15px;
+    color: #555;
+}
+
+/* Botón */
+.card-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.card-button:hover {
+    background-color: #0056b3;
+}
+
+/* Lista de propuestas */
+.card-list {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0 0;
+}
+
+.card-list-item {
+    padding: 5px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.card-list-item:last-child {
+    border-bottom: none;
+}

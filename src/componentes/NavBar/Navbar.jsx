@@ -26,9 +26,14 @@ const Navbar = () => {
                             Programas
                         </Link>
                     </li>
-                    <li>
+                    {/* <li>
                         <Link className="nav-link" to="/noticias" onClick={() => setIsOpen(false)}>
                             Noticias
+                        </Link>
+                    </li> */}
+                    <li>
+                        <Link className="nav-link" to="/candidatos" onClick={() => setIsOpen(false)}>
+                            Candidatos 2025
                         </Link>
                     </li>
                     <li>
