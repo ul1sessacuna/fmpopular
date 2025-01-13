@@ -92,7 +92,7 @@
 .social-media-container {
   display: flex;
   justify-content: center;
-  margin-top: 70px;
+  margin-top: 30px;
 }
 
 .social-media-container a {
@@ -156,17 +156,62 @@
   text-align: center;
 }
 
+.locutor-foto-container {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
 .locutor-foto {
-  width: 150px;
-  height: 150px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 10px;
+  margin-bottom: 9px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
 }
 
-.locutor-nombre {
-  font-size: 1.2rem;
+.en-vivo {
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  width: 5.5vw;
+  transform: translateX(-50%);
+  background-color: red;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 20px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.locutor-programa {
+  font-size: 2rem;
   font-weight: bold;
   color: #fff;
+  margin-bottom: 2px;
+}
+
+.locutor-nombre {
+  font-size: 1rem;
+  font-weight: initial;
+  color: #fff;
+}
+
+
+.footer {
+ 
+  bottom: 0;
+  left: 0;
+  width: 100%; /* Ocupa todo el ancho */
+  background-color: transparent; 
+  color: white;
+  text-align: center; /* Centra el texto */
+  padding: 10px 0; /* Espaciado interno */
+  font-size: 0.9rem; /* Tamaño de fuente */
+  z-index: 10; /* Asegura que esté encima de otros elementos */
+  backdrop-filter: blur(5px); /* Desenfoque del fondo (opcional) */
+  
 }

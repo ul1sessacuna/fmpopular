@@ -1,104 +1,86 @@
-/* Contenedor principal */
-body {
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(to bottom, #1E90FF, #00008B); /* Fondo degradado */
-    color: #fff; /* Texto blanco para contraste */
-}
-
-/* Contenedor principal */
-.container {
-
-    max-width: 1200px;
-    margin-top: 50px;
-    padding: 20px;
-    color: #fff;
-}
-
-/* Título */
-.title {
-    text-align: center;
-    font-size: 28px;
-    margin-bottom: 30px;
-}
-
-/* Tarjeta del candidato */
-.card {
+.candidatos-container {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
     align-items: center;
-    background: #fff;
-    color: #333;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 16px;
-    margin-bottom: 20px;
+    min-height: 100vh;
+    background: linear-gradient(to right, #3b82f6, #6ee7b7);
+    padding: 20px;
+}
+
+.card {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    
 }
 
-/* Imagen del candidato */
 .card-image {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-left: 20px;
-    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    filter: brightness(60%);
+    background-size: cover;
+    background-position: center;
 }
 
-/* Contenido del candidato */
-.card-content {
-    flex: 1;
-    text-align: left;
+.card-image:hover{
+    filter: brightness(100%);
 }
 
-/* Nombre del candidato */
-.card-name {
-    font-size: 24px;
-    margin: 0 0 10px;
-    color: #222;
+.card-title {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    color: white;
+    font-size: 1.8rem;
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+    z-index: 1;
 }
 
-/* Información del candidato */
-.card-info {
-    font-size: 16px;
-    margin: 0 0 15px;
-    color: #555;
-}
-
-/* Botón */
-.card-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    color: #fff;
-    background-color: #007bff;
+.info-button{
+    position: absolute;
+    bottom: 6px;
+    width: 10vw;
+    left: 70px;
     border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    border-radius: 50px;
+    right: 0;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    z-index: 1;
+}
+ 
+.info-button:hover {    
+    background-color: #e2e2e2;
 }
 
-.card-button:hover {
-    background-color: #0056b3;
+
+
+.card:hover .card-info {
+    display: block;
+    animation: fadeIn 0.3s ease;
 }
 
-/* Lista de propuestas */
-.card-list {
-    list-style: none;
-    padding: 0;
-    margin: 15px 0 0;
-}
-
-.card-list-item {
-    padding: 5px 0;
-    border-bottom: 1px solid #ddd;
-}
-
-.card-list-item:last-child {
-    border-bottom: none;
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

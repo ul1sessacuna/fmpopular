@@ -5,37 +5,50 @@ import "font-awesome/css/font-awesome.min.css"; // Importar los iconos de FontAw
 const Inicio = () => {
     const [isPlaying, setIsPlaying] = useState(false); // Estado para el reproductor
     const [locutorActual, setLocutorActual] = useState(null); // Estado para el locutor actual
+    const [programaActual, setProgramaActual] = useState(""); // Estado para el programa actual
 
-    // Lista de locutores según horario
+    // Lista de locutores y programas según horario
     const locutores = [
-        { hora: 0, nombre: "Locutor Nocturno", foto: "https://concepto.de/wp-content/uploads/2018/08/persona-e1533759195177-800x400.jpg" },
-        { hora: 6, nombre: "Locutor Matutino", foto: "/locutor2.jpg" },
-        { hora: 12, nombre: "Locutor del Mediodía", foto: "https://media.istockphoto.com/id/1090878494/es/foto/retrato-de-joven-sonriente-a-hombre-guapo-en-camiseta-polo-azul-aislado-sobre-fondo-gris-de.jpg?s=612x612&w=0&k=20&c=dHFsDEJSZ1kuSO4wTDAEaGOJEF-HuToZ6Gt-E2odc6U=" },
-        { hora: 17, nombre: "Locutor Vespertino", foto: "https://concepto.de/wp-content/uploads/2018/08/persona-e1533759195177-800x400.jpg" },
-        { hora: 22, nombre: "Locutor Nocturno 2", foto: "/locutor5.jpg" },
+        { dia: "lunes", hora: 9, nombre: "Oscar Almiron", programa: "Mañanas con Oscar", foto: "./oscar.jpg" },
+        { dia: "lunes", hora: 12, nombre: "Locutor del Mediodía", programa: "Almuerzo Musical", foto: "/locutor2.jpg" },
+        { dia: "martes", hora: 9, nombre: "Juan Pérez", programa: "Mañanas Relajadas", foto: "./juan.jpg" },
+        { dia: "viernes", hora: 17, nombre: "Carla Gómez", programa: "Almuerzo Radiante", foto: "/carla.jpg" },
+        { dia: "viernes", hora: 18, nombre: "Gómez", programa: "hola a todos", foto: "/carla.jpg" },
+
+
+        // Agrega más locutores y días según sea necesario
     ];
 
-    // Función para obtener el locutor según la hora actual
+
+    // Función para obtener el locutor y programa según la hora actual
     const obtenerLocutorActual = () => {
         const ahora = new Date();
+        const diaActual = ahora.toLocaleString("es-ES", { weekday: "long" }).toLowerCase();
         const horaActual = ahora.getHours();
 
-        // Encuentra el locutor correspondiente
-        const locutor = locutores.find(
-            (l, index) =>
-                horaActual >= l.hora &&
-                (index === locutores.length - 1 || horaActual < locutores[index + 1].hora)
-        );
+        // Filtra locutores del día actual y selecciona el correspondiente a la hora
+        const locutor = locutores
+            .filter((l) => l.dia === diaActual)
+            .find(
+                (l, index, arr) =>
+                    horaActual >= l.hora &&
+                    (index === arr.length - 1 || horaActual < arr[index + 1].hora)
+            );
 
-        return locutor || { nombre: "Locutor Desconocido", foto: "/default.jpg" };
+        return locutor || { nombre: "Locutor Desconocido", programa: "Sin Programa", foto: "/default.jpg" };
     };
 
-    // Actualiza el locutor actual al cargar y cada hora
+
+    // Actualiza el locutor y programa actuales
     useEffect(() => {
-        setLocutorActual(obtenerLocutorActual());
+        const locutor = obtenerLocutorActual();
+        setLocutorActual(locutor);
+        setProgramaActual(locutor.programa);
 
         const intervalo = setInterval(() => {
-            setLocutorActual(obtenerLocutorActual());
+            const locutor = obtenerLocutorActual();
+            setLocutorActual(locutor);
+            setProgramaActual(locutor.programa);
         }, 60 * 60 * 1000); // Actualiza cada hora
 
         return () => clearInterval(intervalo); // Limpia el intervalo al desmontar
@@ -50,7 +63,6 @@ const Inicio = () => {
             <div className="overlay"></div> {/* Superposición para el degradado */}
             <div className="content">
                 <div className="text-container">
-                    {/* Logo con animación */}
                     <img
                         src="/fmlogo.png" // Reemplaza con la ruta de tu logo
                         alt="FM Popular Logo"
@@ -81,12 +93,16 @@ const Inicio = () => {
                 {/* Información del locutor */}
                 {locutorActual && (
                     <div className="locutor-container">
-                        <img
-                            src={locutorActual.foto}
-                            alt={locutorActual.nombre}
-                            className="locutor-foto"
-                        />
-                        <h3 className="locutor-nombre">{locutorActual.nombre}</h3>
+                        <div className="locutor-foto-container">
+                            <span className="en-vivo">EN VIVO</span>
+                            <img
+                                src={locutorActual.foto}
+                                alt={locutorActual.nombre}
+                                className="locutor-foto"
+                            />
+                        </div>
+                        <h3 className="locutor-programa">{programaActual}</h3>
+                        <h4 className="locutor-nombre">{locutorActual.nombre}</h4>
                     </div>
                 )}
 
@@ -108,6 +124,9 @@ const Inicio = () => {
                     </a>
                 </div>
             </div>
+            <footer className="footer">
+                <p>© 2025 FM Popular. Desarollado por Ulises Acuña.</p>
+            </footer>
         </div>
     );
 };
