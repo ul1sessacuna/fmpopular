@@ -131,6 +131,8 @@
   .social-icon {
       font-size: 1.5rem;
   }
+ 
+  
 }
 
 
@@ -198,6 +200,26 @@
   font-size: 1rem;
   font-weight: initial;
   color: #fff;
+}
+
+@media (max-width: 600px) {
+  .locutor-foto {
+    width: 80px;
+    height: 80px;
+  }
+
+  .en-vivo {
+    width: 15vw;
+    padding: 4px 8px;
+  }
+
+  .locutor-programa {
+    font-size: 1.5rem;
+  }
+
+  .locutor-nombre {
+    font-size: 0.9rem;
+  }
 }
 
 

@@ -7,7 +7,6 @@ const candidatos = [
     { id: 3, nombre: "María González", imagen: "oscar.jpg" },
     { id: 4, nombre: "María González", imagen: "oscar.jpg" },
 
-    { id: 3, nombre: "Luis Pérez", imagen: "ruta_imagen3.jpg" },
 ];
 
 const Candidatos = () => {

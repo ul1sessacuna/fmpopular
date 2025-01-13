@@ -4,7 +4,7 @@ import './Programas.css'; // Archivo CSS actualizado
 
 const Programas = () => {
     const programas = [
-        { dia: 'Lunes', hora: '09:00 AM', nombre: 'Mañanas con Sol', conductor: 'Juan Pérez', foto: 'https://concepto.de/wp-content/uploads/2018/08/persona-e1533759195177-800x400.jpg' },
+        { dia: 'Lunes', hora: '09:00 AM', nombre: 'Mañaanas', conductor: 'Oscar Almiron', foto: '/oscar.jpg' },
         { dia: 'Martes', hora: '10:00 AM', nombre: 'Ritmo Urbano', conductor: 'Ana López', foto: '/ruta-a-la-foto2.jpg' },
         { dia: 'Miércoles', hora: '11:00 AM', nombre: 'Rock & Talk', conductor: 'Carlos Sánchez', foto: '/ruta-a-la-foto3.jpg' },
         { dia: 'Jueves', hora: '01:00 PM', nombre: 'Clásicos del Ayer', conductor: 'Laura Gómez', foto: '/ruta-a-la-foto4.jpg' },

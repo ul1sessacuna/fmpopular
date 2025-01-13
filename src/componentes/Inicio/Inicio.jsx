@@ -10,13 +10,14 @@ const Inicio = () => {
     // Lista de locutores y programas según horario
     const locutores = [
         { dia: "lunes", hora: 9, nombre: "Oscar Almiron", programa: "Mañanas con Oscar", foto: "./oscar.jpg" },
-        { dia: "lunes", hora: 12, nombre: "Locutor del Mediodía", programa: "Almuerzo Musical", foto: "/locutor2.jpg" },
-        { dia: "martes", hora: 9, nombre: "Juan Pérez", programa: "Mañanas Relajadas", foto: "./juan.jpg" },
-        { dia: "viernes", hora: 17, nombre: "Carla Gómez", programa: "Almuerzo Radiante", foto: "/carla.jpg" },
-        { dia: "viernes", hora: 18, nombre: "Gómez", programa: "hola a todos", foto: "/carla.jpg" },
+        { dia: "lunes", hora: 18, nombre: "Lautaro", programa: "La Tarde de Lauty", foto: "./oscar.jpg" },
+        { dia: "miercoles", hora: 18, nombre: "Lautaro", programa: "La Tarde de Lauty", foto: "/locutor2.jpg" },
+        { dia: "martes", hora: 18, nombre: "Gilda Pietro", programa: "Tiempo Real", foto: "./gildapietro.jpg" },
+        { dia: "viernes", hora: 18, nombre: "Carla Gómez", programa: "Almuerzo Radiante", foto: "/carla.jpg" },
+        { dia: "viernes", hora: 18, nombre: "Lauty", programa: "La Tarde de Lauty", foto: "/carla.jpg" },
 
 
-        // Agrega más locutores y días según sea necesario
+
     ];
 
 
