@@ -83,4 +83,12 @@
         opacity: 1;
         transform: translateY(0);
     }
+
+}
+
+@media (max-width: 768px) {
+.info-button{
+    width: 45vw;
+    left: 55px;
+}
 }

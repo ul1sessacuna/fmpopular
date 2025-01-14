@@ -9,15 +9,27 @@ const Inicio = () => {
 
     // Lista de locutores y programas según horario
     const locutores = [
-        { dia: "lunes", hora: 9, nombre: "Oscar Almiron", programa: "Mañanas con Oscar", foto: "./oscar.jpg" },
-        { dia: "lunes", hora: 18, nombre: "Lautaro", programa: "La Tarde de Lauty", foto: "./oscar.jpg" },
-        { dia: "miercoles", hora: 18, nombre: "Lautaro", programa: "La Tarde de Lauty", foto: "/locutor2.jpg" },
-        { dia: "martes", hora: 18, nombre: "Gilda Pietro", programa: "Tiempo Real", foto: "./gildapietro.jpg" },
-        { dia: "viernes", hora: 18, nombre: "Carla Gómez", programa: "Almuerzo Radiante", foto: "/carla.jpg" },
-        { dia: "viernes", hora: 18, nombre: "Lauty", programa: "La Tarde de Lauty", foto: "/carla.jpg" },
+        { dia: "lunes", hora: 9, nombre: "Oscar Almiron", programa: "Lo Mas Escuchado", foto: "./oscar.jpg" },
 
+        { dia: "martes", hora: 9, nombre: "Oscar Almiron", programa: "Lo Mas Escuchado", foto: "./oscar.jpg" },
+        { dia: "miercoles", hora: 9, nombre: "Oscar Almiron", programa: "Lo Mas Escuchado", foto: "./oscar.jpg" },
+        { dia: "jueves", hora: 9, nombre: "Oscar Almiron", programa: "Lo Mas Escuchado", foto: "./oscar.jpg" },
+        { dia: "viernes", hora: 9, nombre: "Oscar Almiron", programa: "Lo Mas Escuchado", foto: "./oscar.jpg" },
+        { dia: "lunes", hora: 12, nombre: "Sin Locutor", programa: "Programacion Habitual", foto: "./fm.jpg" },
+        { dia: "martes", hora: 12, nombre: "Sin Locutor", programa: "Programacion Habitual", foto: "./fm.jpg" },
+        { dia: "miercoles", hora: 12, nombre: "Sin Locutor", programa: "Programacion Habitual", foto: "./fm.jpg" },
+        { dia: "jueves", hora: 12, nombre: "Sin Locutor", programa: "Programacion Habitual", foto: "./fm.jpg" },
+        { dia: "viernes", hora: 12, nombre: "Sin Locutor", programa: "Programacion Habitual", foto: "./fm.jpg" },
+        { dia: "lunes", hora: 16, nombre: "Oscar Almiron", programa: "Especiales Retorno Eventos", foto: "./oscar.jpg" },
+        { dia: "miercoles", hora: 16, nombre: "Oscar Almiron", programa: "Especiales Retorno Eventos", foto: "./oscar.jpg" },
+        { dia: "viernes", hora: 16, nombre: "Oscar Almiron", programa: "Especiales Retorno Eventos", foto: "./oscar.jpg" },
 
-
+        { dia: "miercoles", hora: 16, nombre: "Oscar Almiron", programa: "Especiales Retorno Eventos", foto: "./oscar.jpg" },
+        { dia: "Viernes", hora: 16, nombre: "Oscar Almiron", programa: "Especiales Retorno Eventos", foto: "./oscar.jpg" },
+        { dia: "sabado", hora: 8, nombre: "Ariel Brollo", programa: "A Puro Folclore", foto: "./ariel.jpg" },
+        { dia: "sabado", hora: 12, nombre: "Oscar Almiron", programa: "Sobremesa Chamamecera", foto: "./oscar.jpg" },
+        { dia: "sabado", hora: 14, nombre: "Iglesia Evangelica", programa: "Ministerio Jesus Nueva Vida", foto: "./fm.jpg" },
+        { dia: "sabado", hora: 17, nombre: "Iglesia Evangelica", programa: "Iglesia Asamblea de Dios", foto: "./fm.jpg" },
     ];
 
 
@@ -36,7 +48,7 @@ const Inicio = () => {
                     (index === arr.length - 1 || horaActual < arr[index + 1].hora)
             );
 
-        return locutor || { nombre: "Locutor Desconocido", programa: "Sin Programa", foto: "/default.jpg" };
+        return locutor || { nombre: "Programacion", programa: "Sin Programa", foto: "/fm.jpg" };
     };
 
 

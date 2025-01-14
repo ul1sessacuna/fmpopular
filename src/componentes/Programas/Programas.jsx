@@ -1,14 +1,13 @@
 // src/componentes/Programas/Programas.jsx
 import React from 'react';
-import './Programas.css'; // Archivo CSS actualizado
+import './Programas.css';
 
 const Programas = () => {
     const programas = [
-        { dia: 'Lunes', hora: '09:00 AM', nombre: 'Mañaanas', conductor: 'Oscar Almiron', foto: '/oscar.jpg' },
-        { dia: 'Martes', hora: '10:00 AM', nombre: 'Ritmo Urbano', conductor: 'Ana López', foto: '/ruta-a-la-foto2.jpg' },
-        { dia: 'Miércoles', hora: '11:00 AM', nombre: 'Rock & Talk', conductor: 'Carlos Sánchez', foto: '/ruta-a-la-foto3.jpg' },
-        { dia: 'Jueves', hora: '01:00 PM', nombre: 'Clásicos del Ayer', conductor: 'Laura Gómez', foto: '/ruta-a-la-foto4.jpg' },
-        { dia: 'Viernes', hora: '03:00 PM', nombre: 'Hits del Momento', conductor: 'Pedro Torres', foto: '/ruta-a-la-foto5.jpg' },
+        { dia: 'Lunes a Viernes', hora: '09:00 AM', nombre: 'Lo Mas Escuchado', conductor: 'Oscar Almiron', foto: '/oscar.jpg' },
+        { dia: 'Lunes, Martes y Miercoles', hora: '16:00 AM', nombre: 'Especiales Retorno Eventos', conductor: 'Oscar Almiron', foto: '/oscar.jpg' },
+        { dia: 'Sabado', hora: '08:00 AM', nombre: 'Ariel Brollo', conductor: 'A Puro Folklore', foto: '/ariel.jpg' },
+        { dia: 'Sabado', hora: '14:00 PM', nombre: 'Sobremesa Chamamecera', conductor: 'Ismael Torres', foto: '/fm.jpg' },
     ];
 
     return (
