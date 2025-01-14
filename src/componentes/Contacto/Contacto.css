@@ -1,4 +1,5 @@
-/* src/componentes/Contacto/Contacto.css */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap');
+
 .contacto-container {
     display: flex;
     flex-direction: column;
@@ -12,6 +13,8 @@
   }
   
   .contacto-container h2 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
     font-size: 2rem;
     margin-bottom: 1.5rem;
   }

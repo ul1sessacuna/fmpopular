@@ -1,16 +1,18 @@
-/* Navbar general */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap');
+
+
 .custom-navbar {
   position: fixed;
-  top: 10px; /* Fijado en la parte superior */
-  left: 0;
+  top: 10px;
   font-size: 1.2rem;
   font-family: 'Poppins', sans-serif;
+  font-weight: bold;
   width: 100%;
-  background-color: transparent; /* Fondo transparente */
+  background-color: transparent; 
   display: flex;
-  justify-content: center; /* Centra el contenido horizontalmente */
+  justify-content: center; 
   align-items: center;
-  height: 60px; /* Altura del navbar */
+  height: 60px; 
   z-index: 1000;
 }
 
@@ -31,6 +33,11 @@
   color: #ffffff;
   margin: 0;
   padding: 0;
+}
+
+.nav-link:hover{
+  border-bottom: 2px solid #fff;
+ 
 }
 
 /* Estilos de cada enlace */

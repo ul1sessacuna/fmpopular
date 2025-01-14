@@ -138,7 +138,7 @@ const Inicio = () => {
                 </div>
             </div>
             <footer className="footer">
-                <p>© 2025 FM Popular. Desarollado por Ulises Acuña.</p>
+                <p>© 2025 FM Popular. Desarollado por <a href="https://www.instagram.com/ulisessacuna/">Ulises Acuña</a></p>
             </footer>
         </div>
     );
