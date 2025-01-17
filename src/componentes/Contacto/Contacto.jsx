@@ -109,7 +109,7 @@ const Contacto = () => {
                     alt="WhatsApp"
                     className="whatsapp-logo"
                 />
-                <span className="whatsapp-number">+54 9 11 1234 5678</span>
+                <span className="whatsapp-number">3282 308748</span>
             </div>
         </div>
     );

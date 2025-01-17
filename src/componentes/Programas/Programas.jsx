@@ -6,7 +6,7 @@ const Programas = () => {
     const programas = [
         { dia: 'Lunes a Viernes', hora: '09:00 AM', nombre: 'Lo Mas Escuchado', conductor: 'Oscar Almiron', foto: '/oscar.jpg' },
         { dia: 'Lunes, Martes y Miercoles', hora: '16:00 AM', nombre: 'Especiales Retorno Eventos', conductor: 'Oscar Almiron', foto: '/oscar.jpg' },
-        { dia: 'Sabado', hora: '08:00 AM', nombre: 'Ariel Brollo', conductor: 'A Puro Folklore', foto: '/ariel.jpg' },
+        { dia: 'Sabado', hora: '08:00 AM', nombre: 'A Puro Folklore', conductor: 'Ariel Brollo', foto: '/ariel.jpg' },
         { dia: 'Sabado', hora: '14:00 PM', nombre: 'Sobremesa Chamamecera', conductor: 'Ismael Torres', foto: '/fm.jpg' },
     ];
 
