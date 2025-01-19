@@ -160,14 +160,13 @@
   top: 20px; /* Ajusta la distancia desde el borde superior */
   right: 20px; /* Ajusta la distancia desde el borde derecho */
   text-align: center;
-
   padding: 10px;
   border-radius: 10px;
   z-index: 1000; /* Asegura que esté por encima de otros elementos */
 }
 
 .locutor-foto {
-  width: 100px; /* Tamaño más pequeño para adaptarse a la esquina */
+  width: 100px; 
   height: 100px;
   border-radius: 50%;
   object-fit: cover;
@@ -176,21 +175,21 @@
 }
 
 .locutor-programa {
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: bold;
   color: #fff;
-  margin-bottom: 5px;
+  margin-bottom: 3px;
 }
 
 .locutor-nombre {
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: normal;
   color: #fff;
 }
 
 .en-vivo {
   position: absolute;
-  bottom: 57px;
+  bottom: 70px;
   left: 50%;
   width: auto;
   transform: translateX(-50%);
@@ -213,21 +212,23 @@
   }
 
   .locutor-foto {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
   }
 
   .en-vivo {
-    width: 17vw;
+    width: 15vw;
     padding: 4px 8px;
+    font-size: 8px;
+    bottom: 51px;
   }
 
   .locutor-programa {
-    font-size: 1.5rem;
+    font-size: 0.8rem;
   }
 
   .locutor-nombre {
-    font-size: 0.9rem;
+    font-size: 0.7rem;
   }
 }
 

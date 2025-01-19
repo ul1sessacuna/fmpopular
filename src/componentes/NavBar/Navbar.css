@@ -68,9 +68,9 @@
       position: absolute; /* Posicionar el botón de manera absoluta */
       top: 10px;
       left: 10px; 
-      background-color: rgba(32, 0, 92, 0.9); 
+      background-color: rgba(255, 255, 255, 0.9); 
       border: none; 
-      color: white; 
+      color: rgb(0, 0, 0); 
       font-size: 1.5rem; 
       padding: 0.6rem; 
       /* border-radius: 5px;  */
@@ -79,16 +79,17 @@
   }
    
   .menu-toggle:hover{
-   background-color:rgba(32, 0, 92, 0.9);
+   background-color:rgba(255, 255, 255, 0.9);
   }
   .nav-links {
       display: none;
       flex-direction: column;
       position: absolute;
       top: 10px;
+      color: #000000;
       left: 50px;
       width: 80%;
-      background-color: rgba(32, 0, 92, 0.9);
+      background-color: rgba(255, 255, 255, 0.9);
   
   }
 
@@ -97,7 +98,7 @@
       gap: 10px;
   }
 .nav-links:hover{
- color: #cccccc;
+ color: #000000;
 }
   .nav-link {
       text-align: center;
