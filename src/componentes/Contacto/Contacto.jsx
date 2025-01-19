@@ -105,11 +105,11 @@ const Contacto = () => {
 
             <div className="whatsapp-container">
                 <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+                    src="https://www.svgrepo.com/show/38250/whatsapp.svg"
                     alt="WhatsApp"
                     className="whatsapp-logo"
                 />
-                <span className="whatsapp-number">3282 308748</span>
+                <span className="whatsapp-number">+54 3482 308748</span>
             </div>
         </div>
     );

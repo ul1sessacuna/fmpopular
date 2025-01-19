@@ -82,9 +82,11 @@
   }
   
   .whatsapp-logo {
+    color: #fff;
     width: 30px;
     height: 30px;
     margin-right: 10px;
+    
   }
   
   .whatsapp-number {
@@ -94,7 +96,7 @@
   }
 
   .success-message {
-    color: green;
+    color: rgb(255, 255, 255);
     margin-top: 1rem;
 }
 

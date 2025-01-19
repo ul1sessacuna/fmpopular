@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./Inicio.css";
-import "font-awesome/css/font-awesome.min.css"; // Importar los iconos de FontAwesome
+import "font-awesome/css/font-awesome.min.css";
 
 const Inicio = () => {
     const [isPlaying, setIsPlaying] = useState(false); // Estado para el reproductor
     const [locutorActual, setLocutorActual] = useState(null); // Estado para el locutor actual
     const [programaActual, setProgramaActual] = useState(""); // Estado para el programa actual
+    const [currentAdIndex, setCurrentAdIndex] = useState(0); // Estado para el índice de la publicidad actual
 
     // Lista de locutores y programas según horario
     const locutores = [
@@ -23,6 +24,7 @@ const Inicio = () => {
         { dia: "lunes", hora: 16, nombre: "Oscar Almiron", programa: "Especiales Retorno Eventos", foto: "./oscar.jpg" },
         { dia: "miercoles", hora: 16, nombre: "Oscar Almiron", programa: "Especiales Retorno Eventos", foto: "./oscar.jpg" },
         { dia: "viernes", hora: 16, nombre: "Oscar Almiron", programa: "Especiales Retorno Eventos", foto: "./oscar.jpg" },
+        { dia: "viernes", hora: 18, nombre: "Sin Locutor", programa: "Programacion habitual", foto: "./fm.jpg" },
 
         { dia: "miercoles", hora: 16, nombre: "Oscar Almiron", programa: "Especiales Retorno Eventos", foto: "./oscar.jpg" },
         { dia: "Viernes", hora: 16, nombre: "Oscar Almiron", programa: "Especiales Retorno Eventos", foto: "./oscar.jpg" },
@@ -32,14 +34,19 @@ const Inicio = () => {
         { dia: "sabado", hora: 17, nombre: "Iglesia Evangelica", programa: "Iglesia Asamblea de Dios", foto: "./fm.jpg" },
     ];
 
+    // Lista de publicidades (puedes añadir más imágenes)
+    const publicidades = [
+        { src: "./oscar.jpg", alt: "Publicidad 1" },
+        { src: "./gildapietro.jpg", alt: "Publicidad 2" },
+        { src: "./ad3.jpg", alt: "Publicidad 3" },
+    ];
 
-    // Función para obtener el locutor y programa según la hora actual
+    // Función para obtener el locutor actual
     const obtenerLocutorActual = () => {
         const ahora = new Date();
         const diaActual = ahora.toLocaleString("es-ES", { weekday: "long" }).toLowerCase();
         const horaActual = ahora.getHours();
 
-        // Filtra locutores del día actual y selecciona el correspondiente a la hora
         const locutor = locutores
             .filter((l) => l.dia === diaActual)
             .find(
@@ -50,7 +57,6 @@ const Inicio = () => {
 
         return locutor || { nombre: "Programacion", programa: "Sin Programa", foto: "/fm.jpg" };
     };
-
 
     // Actualiza el locutor y programa actuales
     useEffect(() => {
@@ -64,20 +70,29 @@ const Inicio = () => {
             setProgramaActual(locutor.programa);
         }, 60 * 60 * 1000); // Actualiza cada hora
 
-        return () => clearInterval(intervalo); // Limpia el intervalo al desmontar
+        return () => clearInterval(intervalo);
     }, []);
 
+    // Cambiar publicidad cada 30 segundos
+    useEffect(() => {
+        const intervaloPublicidad = setInterval(() => {
+            setCurrentAdIndex((prevIndex) => (prevIndex + 1) % publicidades.length);
+        }, 30000);
+
+        return () => clearInterval(intervaloPublicidad);
+    }, [publicidades.length]);
+
     const handleClick = () => {
-        setIsPlaying(true); // Mostrar el reproductor al hacer clic
+        setIsPlaying(true);
     };
 
     return (
         <div className="inicio-container">
-            <div className="overlay"></div> {/* Superposición para el degradado */}
+            <div className="overlay"></div>
             <div className="content">
                 <div className="text-container">
                     <img
-                        src="/fmlogo.png" // Reemplaza con la ruta de tu logo
+                        src="/fmlogo.png"
                         alt="FM Popular Logo"
                         className="logo-animado"
                     />
@@ -102,6 +117,15 @@ const Inicio = () => {
                         ></iframe>
                     </div>
                 )}
+
+                {/* Carrusel de Publicidades */}
+                <div className="ads-container">
+                    <img
+                        src={publicidades[currentAdIndex].src}
+                        alt={publicidades[currentAdIndex].alt}
+                        className="ads-image"
+                    />
+                </div>
 
                 {/* Información del locutor */}
                 {locutorActual && (
@@ -138,7 +162,7 @@ const Inicio = () => {
                 </div>
             </div>
             <footer className="footer">
-                <p>© 2025 FM Popular. Desarollado por <a href="https://www.instagram.com/ulisessacuna/">Ulises Acuña</a></p>
+                <p>© 2025 FM Popular. Desarrollado por <a href="https://www.instagram.com/ulisessacuna/">Ulises Acuña</a></p>
             </footer>
         </div>
     );
