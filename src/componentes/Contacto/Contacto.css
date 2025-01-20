@@ -2,7 +2,7 @@
 
 
 .contacto-container {
-    flex: 1; 
+  
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,6 +10,7 @@
     padding: 20px;
     background: linear-gradient(to bottom, #1E90FF, #00008B); /* Fondo degradado */
     color: #fff;
+    min-height: 100vh;
 }
 
 .contacto-container h2 {
