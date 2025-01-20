@@ -105,12 +105,15 @@ const Contacto = () => {
 
             <div className="whatsapp-container">
                 <img
-                    src="https://www.svgrepo.com/show/38250/whatsapp.svg"
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/2062095_application_chat_communication_logo_whatsapp_icon.svg/2048px-2062095_application_chat_communication_logo_whatsapp_icon.svg.png"
                     alt="WhatsApp"
                     className="whatsapp-logo"
                 />
                 <span className="whatsapp-number">+54 3482 308748</span>
             </div>
+            <footer className="footer">
+                <p>© 2025 FM Popular. Desarrollado por <a href="https://www.instagram.com/ulisessacuna/">Ulises Acuña</a></p>
+            </footer>
         </div>
     );
 };

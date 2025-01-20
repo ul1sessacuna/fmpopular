@@ -13,9 +13,9 @@ const Navbar = () => {
         <nav className="custom-navbar">
             <div className="navbar-container">
                 <button className="menu-toggle" onClick={toggleMenu}>
-                    ☰
+                    {isOpen ? '✖' : '☰'}
                 </button>
-                <ul className={`nav-links ${isOpen ? "nav-active" : ""}`}>
+                <ul className={`nav-links ${isOpen ? 'nav-active' : ''}`}>
                     <li>
                         <Link className="nav-link" to="/inicio" onClick={() => setIsOpen(false)}>
                             Inicio
@@ -26,11 +26,6 @@ const Navbar = () => {
                             Programas
                         </Link>
                     </li>
-                    {/* <li>
-                        <Link className="nav-link" to="/noticias" onClick={() => setIsOpen(false)}>
-                            Noticias
-                        </Link>
-                    </li> */}
                     <li>
                         <Link className="nav-link" to="/candidatos" onClick={() => setIsOpen(false)}>
                             Candidatos 2025

@@ -1,61 +1,62 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap');
 
+
 .contacto-container {
+    flex: 1; 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 20px;
-    height: 100vh;
     background: linear-gradient(to bottom, #1E90FF, #00008B); /* Fondo degradado */
     color: #fff;
-    font-family: 'Arial', sans-serif;
-  }
-  
-  .contacto-container h2 {
+}
+
+.contacto-container h2 {
     font-family: 'Roboto', sans-serif;
     font-weight: 600;
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin-bottom: 1.5rem;
-  }
-  
-  .contacto-form {
-    width: 80%;
-    max-width: 500px;
+    margin-top: 40px;
+}
+
+.contacto-form {
+    width: 70%;
+    max-width: 600px;
     background: #ffffff;
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     color: #333;
-  }
-  
-  .form-group {
-    margin-bottom: 15px;
-  }
-  
-  .form-group label {
+}
+
+.form-group {
+    margin-bottom: 20px; /* Espaciado entre los campos */
+}
+
+.form-group label {
     display: block;
     font-weight: bold;
     margin-bottom: 5px;
-  }
-  
-  .form-group input,
-  .form-group textarea {
+}
+
+.form-group input,
+.form-group textarea {
     width: 100%;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
     font-size: 1rem;
     outline: none;
-  }
-  
-  .form-group input:focus,
-  .form-group textarea:focus {
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
     border-color: #1e90ff;
     box-shadow: 0 0 5px rgba(30, 144, 255, 0.5);
-  }
-  
-  .btn-enviar {
+}
+
+.btn-enviar {
     display: block;
     width: 100%;
     background-color: #1e90ff;
@@ -67,35 +68,34 @@
     font-weight: bold;
     cursor: pointer;
     text-transform: uppercase;
-  }
-  
-  .btn-enviar:hover {
+    transition: background-color 0.3s ease;
+}
+
+.btn-enviar:hover {
     background-color: #00008b;
-  }
-  
-  /* Estilos para el contenedor de WhatsApp */
-  .whatsapp-container {
+}
+
+/* Estilos para el contenedor de WhatsApp */
+.whatsapp-container {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 40px;
-  }
-  
-  .whatsapp-logo {
-    color: #fff;
-    width: 30px;
-    height: 30px;
+}
+
+.whatsapp-logo {
+    width: 40px;
+    height: 40px;
     margin-right: 10px;
-    
-  }
-  
-  .whatsapp-number {
+}
+
+.whatsapp-number {
     font-size: 1rem;
     color: #fff;
     font-weight: bold;
-  }
+}
 
-  .success-message {
+.success-message {
     color: rgb(255, 255, 255);
     margin-top: 1rem;
 }
@@ -105,19 +105,39 @@
     margin-top: 1rem;
 }
 
+/* Footer fijo al fondo */
+.footer {
+    background-color: transparent;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    font-size: 0.9rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer a {
+    color: #ffffff;
   
-  @media (max-width: 768px) {
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
     .contacto-form {
-      width: 95%;
+        width: 95%;
     }
-  
+
     .whatsapp-logo {
-      width: 25px;
-      height: 25px;
+        width: 25px;
+        height: 25px;
     }
-  
+
     .whatsapp-number {
-      font-size: 0.9rem;
+        font-size: 0.9rem;
     }
-  }
-  
+}

@@ -19,13 +19,12 @@
 /* Contenedor del Navbar */
 .navbar-container {
   display: flex;
-  justify-content: center; /* Centrado horizontal */
+  justify-content: center; 
   align-items: center;
   width: 100%;
   max-width: 1200px;
 }
 
-/* Estilos del menú */
 .nav-links {
   display: flex;
   gap: 90px; 
@@ -35,17 +34,28 @@
   padding: 0;
 }
 
-.nav-link:hover{
-  border-bottom: 2px solid #fff;
- 
-}
-
-/* Estilos de cada enlace */
 .nav-link {
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s ease-in-out;
+  position: relative; /* Necesario para posicionar el pseudo-elemento */
 }
+
+.nav-link::after {
+  content: ""; 
+  position: absolute; 
+  left: 0;
+  bottom: -2px; 
+  width: 0%; 
+  height: 2px; 
+  background-color: #ffffff; 
+  transition: width 0.4s ease-in-out; 
+}
+
+.nav-link:hover::after {
+  width: 100%; 
+}
+
 
 .custom-navbar:hover {
   color: #cccccc; 
@@ -80,6 +90,7 @@
    
   .menu-toggle:hover{
    background-color:rgba(255, 255, 255, 0.9);
+   
   }
   .nav-links {
       display: none;

@@ -12,7 +12,8 @@ const candidatos = [
 const Candidatos = () => {
     return (
         <div className="candidatos-container">
-            {candidatos.map((candidato) => (
+            <h2>PROXIMAMENTE</h2>
+            {/* {candidatos.map((candidato) => (
                 <div key={candidato.id} className="card">
                     <div
                         className="card-image"
@@ -21,7 +22,7 @@ const Candidatos = () => {
                     <h2 className="card-title">{candidato.nombre}</h2>
                     <button className="info-button">Más información</button>
                 </div>
-            ))}
+            ))} */}
         </div>
     );
 };

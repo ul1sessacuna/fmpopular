@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from 'react-router-dom';
 import "./Inicio.css";
 import "font-awesome/css/font-awesome.min.css";
 
@@ -37,8 +38,8 @@ const Inicio = () => {
     // Lista de publicidades (puedes añadir más imágenes)
     const publicidades = [
         { src: "./publcita.png", alt: "Publicidad 1" },
-        { src: "./publcita.png", alt: "Publicidad 2" },
-        { src: "./ad3.jpg", alt: "Publicidad 3" },
+        { src: "./japo.jpg", alt: "Publicidad 2" },
+        { src: "./publcita.png", alt: "Publicidad 3" },
     ];
 
     // Función para obtener el locutor actual
@@ -73,11 +74,11 @@ const Inicio = () => {
         return () => clearInterval(intervalo);
     }, []);
 
-    // Cambiar publicidad cada 30 segundos
+    // Cambiar publicidad cada 20 segundos
     useEffect(() => {
         const intervaloPublicidad = setInterval(() => {
             setCurrentAdIndex((prevIndex) => (prevIndex + 1) % publicidades.length);
-        }, 30000);
+        }, 20000);
 
         return () => clearInterval(intervaloPublicidad);
     }, [publicidades.length]);
@@ -91,11 +92,13 @@ const Inicio = () => {
             <div className="overlay"></div>
             <div className="content">
                 <div className="text-container">
-                    <img
-                        src="/fmlogo.png"
-                        alt="FM Popular Logo"
-                        className="logo-animado"
-                    />
+                    <Link to="/inicio">
+                        <img
+                            src="/fmlogo.png"
+                            alt="FM Popular Logo"
+                            className="logo-animado"
+                        />
+                    </Link>
                     <p>"Donde vive la música"</p>
                 </div>
 
