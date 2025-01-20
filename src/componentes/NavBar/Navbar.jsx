@@ -13,7 +13,7 @@ const Navbar = () => {
         <nav className="custom-navbar">
             <div className="navbar-container">
                 <button className="menu-toggle" onClick={toggleMenu}>
-                    {isOpen ? '✖' : '☰'}
+                    {isOpen ? 'X' : '☰'}
                 </button>
                 <ul className={`nav-links ${isOpen ? 'nav-active' : ''}`}>
                     <li>

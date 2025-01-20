@@ -24,10 +24,12 @@ const Inicio = () => {
         { dia: "viernes", hora: 12, nombre: "Sin Locutor", programa: "Programacion Habitual", foto: "./fm.jpg" },
         { dia: "lunes", hora: 16, nombre: "Oscar Almiron", programa: "Especiales Retorno Eventos", foto: "./oscar.jpg" },
         { dia: "miercoles", hora: 16, nombre: "Oscar Almiron", programa: "Especiales Retorno Eventos", foto: "./oscar.jpg" },
+        { dia: "lunes", hora: 18, nombre: "Sin Locutor", programa: "Programacion Habitual", foto: "./fm.jpg" },
         { dia: "viernes", hora: 16, nombre: "Oscar Almiron", programa: "Especiales Retorno Eventos", foto: "./oscar.jpg" },
         { dia: "viernes", hora: 18, nombre: "Sin Locutor", programa: "Programacion habitual", foto: "./fm.jpg" },
-
         { dia: "miercoles", hora: 16, nombre: "Oscar Almiron", programa: "Especiales Retorno Eventos", foto: "./oscar.jpg" },
+        { dia: "miercoles", hora: 18, nombre: "Sin Locutor", programa: "Programacion Habitual", foto: "./oscar.jpg" },
+
         { dia: "Viernes", hora: 16, nombre: "Oscar Almiron", programa: "Especiales Retorno Eventos", foto: "./oscar.jpg" },
         { dia: "sabado", hora: 8, nombre: "Ariel Brollo", programa: "A Puro Folclore", foto: "./ariel.jpg" },
         { dia: "sabado", hora: 12, nombre: "Oscar Almiron", programa: "Sobremesa Chamamecera", foto: "./oscar.jpg" },
