@@ -36,8 +36,8 @@ const Inicio = () => {
 
     // Lista de publicidades (puedes añadir más imágenes)
     const publicidades = [
-        { src: "./oscar.jpg", alt: "Publicidad 1" },
-        { src: "./gildapietro.jpg", alt: "Publicidad 2" },
+        { src: "./publcita.png", alt: "Publicidad 1" },
+        { src: "./publcita.png", alt: "Publicidad 2" },
         { src: "./ad3.jpg", alt: "Publicidad 3" },
     ];
 
