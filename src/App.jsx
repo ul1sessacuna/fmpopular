@@ -35,9 +35,8 @@ function App() {
         <Route path="/inicio" element={<Inicio />} />
         <Route path="/programas" element={<Programas />} />
         <Route path="/candidatos" element={<Candidatos />} />
-        <Route path="/noticias" element={<Noticias />} />
+        {/* <Route path="/noticias" element={<Noticias />} /> */}
         <Route path="/contacto" element={<Contacto />} />
-
       </Routes>
     </Router>
   );
