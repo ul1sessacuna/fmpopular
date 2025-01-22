@@ -36,6 +36,12 @@ const Navbar = () => {
                             Contacto
                         </Link>
                     </li>
+                    <li>
+                        <Link className="nav-link" to="/noticias" onClick={() => setIsOpen(false)}>
+                            Contacto
+                        </Link>
+                    </li>
+
                 </ul>
             </div>
         </nav>

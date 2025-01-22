@@ -8,14 +8,15 @@ const Noticias = () => {
     useEffect(() => {
         const fetchNoticias = async () => {
             try {
+                // Endpoint ajustado para la API de NewsData.io
                 const response = await fetch(
-                    'https://newsapi.org/v2/top-headlines?country=us&apiKey=135c931cfcab4ad7b2fc15104dc1f884'
+                    'https://newsdata.io/api/1/news?country=ar&apikey=pub_6626635001cf10be8caad23578a9ee1c16cc0'
                 );
                 const data = await response.json();
 
-                // Verificar si 'articles' existe y es un arreglo
-                if (Array.isArray(data.articles)) {
-                    setNoticias(data.articles);
+                // Verificar si 'results' existe y es un arreglo
+                if (Array.isArray(data.results)) {
+                    setNoticias(data.results);
                 } else {
                     console.error('Datos de noticias no válidos');
                     setNoticias([]);
@@ -46,9 +47,9 @@ const Noticias = () => {
                 {noticias.map((noticia, index) => (
                     <div className="noticia-card" key={index}>
                         {/* Mostrar imagen solo si existe */}
-                        {noticia.urlToImage ? (
+                        {noticia.image_url ? (
                             <img
-                                src={noticia.urlToImage}
+                                src={noticia.image_url}
                                 alt={noticia.title}
                                 className="noticia-image"
                             />
@@ -60,7 +61,7 @@ const Noticias = () => {
                         <div className="noticia-info">
                             <h3>{noticia.title}</h3>
                             <p>{noticia.description || 'Sin descripción disponible.'}</p>
-                            <a href={noticia.url} target="_blank" rel="noopener noreferrer">
+                            <a href={noticia.link} target="_blank" rel="noopener noreferrer">
                                 Leer más
                             </a>
                         </div>
