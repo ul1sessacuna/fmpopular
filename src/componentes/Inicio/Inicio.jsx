@@ -12,25 +12,23 @@ const Inicio = () => {
     // Lista de locutores y programas según horario
     const locutores = [
         { dia: "lunes", hora: 9, nombre: "Oscar Almiron", programa: "Lo Mas Escuchado", foto: "./oscar.jpg" },
-
         { dia: "martes", hora: 9, nombre: "Oscar Almiron", programa: "Lo Mas Escuchado", foto: "./oscar.jpg" },
-        { dia: "miercoles", hora: 9, nombre: "Oscar Almiron", programa: "Lo Mas Escuchado", foto: "./oscar.jpg" },
+        { dia: "miércoles", hora: 9, nombre: "Oscar Almiron", programa: "Lo Mas Escuchado", foto: "./oscar.jpg" },
         { dia: "jueves", hora: 9, nombre: "Oscar Almiron", programa: "Lo Mas Escuchado", foto: "./oscar.jpg" },
         { dia: "viernes", hora: 9, nombre: "Oscar Almiron", programa: "Lo Mas Escuchado", foto: "./oscar.jpg" },
         { dia: "lunes", hora: 12, nombre: "Sin Locutor", programa: "Programacion Habitual", foto: "./fm.jpg" },
         { dia: "martes", hora: 12, nombre: "Sin Locutor", programa: "Programacion Habitual", foto: "./fm.jpg" },
-        { dia: "miercoles", hora: 12, nombre: "Sin Locutor", programa: "Programacion Habitual", foto: "./fm.jpg" },
+        { dia: "miércoles", hora: 12, nombre: "Sin Locutor", programa: "Programacion Habitual", foto: "./fm.jpg" },
         { dia: "jueves", hora: 12, nombre: "Sin Locutor", programa: "Programacion Habitual", foto: "./fm.jpg" },
         { dia: "viernes", hora: 12, nombre: "Sin Locutor", programa: "Programacion Habitual", foto: "./fm.jpg" },
         { dia: "lunes", hora: 16, nombre: "Oscar Almiron", programa: "Especiales Retorno Eventos", foto: "./oscar.jpg" },
-        { dia: "miercoles", hora: 16, nombre: "Oscar Almiron", programa: "Especiales Retorno Eventos", foto: "./oscar.jpg" },
+        { dia: "miércoles", hora: 16, nombre: "Oscar Almiron", programa: "Especiales Retorno Eventos", foto: "./oscar.jpg" },
         { dia: "lunes", hora: 18, nombre: "Sin Locutor", programa: "Programacion Habitual", foto: "./fm.jpg" },
         { dia: "viernes", hora: 16, nombre: "Oscar Almiron", programa: "Especiales Retorno Eventos", foto: "./oscar.jpg" },
         { dia: "viernes", hora: 18, nombre: "Sin Locutor", programa: "Programacion habitual", foto: "./fm.jpg" },
-        { dia: "miercoles", hora: 16, nombre: "Oscar Almiron", programa: "Especiales Retorno Eventos", foto: "./oscar.jpg" },
-        { dia: "miercoles", hora: 18, nombre: "Sin Locutor", programa: "Programacion Habitual", foto: "./oscar.jpg" },
-
-        { dia: "Viernes", hora: 16, nombre: "Oscar Almiron", programa: "Especiales Retorno Eventos", foto: "./oscar.jpg" },
+        { dia: "miércoles", hora: 16, nombre: "Oscar Almiron", programa: "Especiales Retorno Eventos", foto: "./oscar.jpg" },
+        { dia: "miércoles", hora: 18, nombre: "Sin Locutor", programa: "Programacion Habitual", foto: "./fm.jpg" },
+        { dia: "viernes", hora: 16, nombre: "Oscar Almiron", programa: "Especiales Retorno Eventos", foto: "./oscar.jpg" },
         { dia: "sabado", hora: 8, nombre: "Ariel Brollo", programa: "A Puro Folclore", foto: "./ariel.jpg" },
         { dia: "sabado", hora: 12, nombre: "Oscar Almiron", programa: "Sobremesa Chamamecera", foto: "./oscar.jpg" },
         { dia: "sabado", hora: 14, nombre: "Iglesia Evangelica", programa: "Ministerio Jesus Nueva Vida", foto: "./fm.jpg" },
@@ -41,13 +39,14 @@ const Inicio = () => {
     const publicidades = [
         { src: "./publcita.png", alt: "Publicidad 1" },
         { src: "./japo.jpg", alt: "Publicidad 2" },
-        { src: "./publcita.png", alt: "Publicidad 3" },
+        { src: "./hobby.png", alt: "Publicidad 3" },
     ];
 
     // Función para obtener el locutor actual
     const obtenerLocutorActual = () => {
         const ahora = new Date();
         const diaActual = ahora.toLocaleString("es-ES", { weekday: "long" }).toLowerCase();
+        console.log("Día actual:", diaActual); // Verificar día
         const horaActual = ahora.getHours();
 
         const locutor = locutores
