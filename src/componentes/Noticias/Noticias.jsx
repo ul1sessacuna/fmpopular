@@ -10,7 +10,7 @@ const Noticias = () => {
             try {
                 // Endpoint ajustado para la API de NewsData.io
                 const response = await fetch(
-                    'https://newsdata.io/api/1/news?country=ar&apikey=pub_6626635001cf10be8caad23578a9ee1c16cc0'
+                    'https://newsdata.io/api/1/latest?country=ar&apikey=pub_6626635001cf10be8caad23578a9ee1c16cc0'
                 );
                 const data = await response.json();
 

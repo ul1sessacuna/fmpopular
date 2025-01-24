@@ -37,8 +37,8 @@ const Navbar = () => {
                         </Link>
                     </li>
                     {/* <li>
-                        <Link className="nav-link" to="/noticias" onClick={() => setIsOpen(false)}>
-                            Contacto
+                        <Link className="nav-link" to="/artistas" onClick={() => setIsOpen(false)}>
+                            Festival
                         </Link>
                     </li> */}
 

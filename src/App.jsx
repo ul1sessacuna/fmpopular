@@ -4,6 +4,7 @@ import ReactGA from "react-ga4";
 import Navbar from "./componentes/NavBar/Navbar"; // Importa el Navbar
 import Programas from "./componentes/Programas/Programas";
 import Noticias from "./componentes/Noticias/Noticias";
+import Artistas from "./componentes/Artistas/Artistas";
 import Candidatos from "./componentes/Candidatos/Candidatos";
 import Inicio from "./componentes/Inicio/Inicio";
 import Contacto from "./componentes/Contacto/Contacto";
@@ -37,6 +38,8 @@ function App() {
         <Route path="/candidatos" element={<Candidatos />} />
         {/* <Route path="/noticias" element={<Noticias />} /> */}
         <Route path="/contacto" element={<Contacto />} />
+        {/* <Route path="/artistas" element={<Artistas />} /> */}
+
       </Routes>
     </Router>
   );

@@ -38,6 +38,8 @@ const Inicio = () => {
         { src: "./publcita.png", alt: "Publicidad 1" },
         { src: "./japo.jpg", alt: "Publicidad 2" },
         { src: "./hobby.png", alt: "Publicidad 3" },
+        { src: "./norma.png", alt: "Publicidad 4" },
+
     ];
 
     // Función para obtener el locutor actual
