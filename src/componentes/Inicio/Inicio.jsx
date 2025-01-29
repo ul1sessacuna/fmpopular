@@ -24,11 +24,10 @@ const Inicio = () => {
         { dia: "lunes", hora: 18, nombre: "Sin Locutor", programa: "Programacion Habitual", foto: "./fm.jpg" },
         { dia: "viernes", hora: 16, nombre: "Eva Zapata", programa: "Especiales Retorno Eventos", foto: "./eva.jpg" },
         { dia: "viernes", hora: 18, nombre: "Sin Locutor", programa: "Programacion habitual", foto: "./fm.jpg" },
-        { dia: "miércoles", hora: 16, nombre: "Oscar Almiron", programa: "Especiales Retorno Eventos", foto: "./oscar.jpg" },
         { dia: "miércoles", hora: 18, nombre: "Sin Locutor", programa: "Programacion Habitual", foto: "./fm.jpg" },
         { dia: "viernes", hora: 16, nombre: "Oscar Almiron", programa: "Especiales Retorno Eventos", foto: "./oscar.jpg" },
         { dia: "sabado", hora: 8, nombre: "Ariel Brollo", programa: "A Puro Folclore", foto: "./ariel.jpg" },
-        { dia: "sabado", hora: 12, nombre: "Oscar Almiron", programa: "Sobremesa Chamamecera", foto: "./oscar.jpg" },
+        { dia: "sabado", hora: 12, nombre: "Ismael Torres", programa: "Sobremesa Chamamecera", foto: "./fm.jpg" },
         { dia: "sabado", hora: 14, nombre: "Iglesia Evangelica", programa: "Ministerio Jesus Nueva Vida", foto: "./fm.jpg" },
         { dia: "sabado", hora: 17, nombre: "Iglesia Evangelica", programa: "Iglesia Asamblea de Dios", foto: "./fm.jpg" },
     ];
