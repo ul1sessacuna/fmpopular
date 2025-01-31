@@ -22,17 +22,17 @@ const Inicio = () => {
         { dia: "jueves", hora: 12, nombre: "Sin Locutor", programa: "Programacion Habitual", foto: "./fm.jpg" },
         { dia: "viernes", hora: 12, nombre: "Sin Locutor", programa: "Programacion Habitual", foto: "./fm.jpg" },
         { dia: "lunes", hora: 18, nombre: "Sin Locutor", programa: "Programacion Habitual", foto: "./fm.jpg" },
-        { dia: "viernes", hora: 16, nombre: "Eva Zapata", programa: "Especiales Retorno Eventos", foto: "./eva.jpg" },
-        { dia: "viernes", hora: 18, nombre: "Sin Locutor", programa: "Programacion habitual", foto: "./fm.jpg" },
+        { dia: "viernes", hora: 18, nombre: "Eva Zapata", programa: "Especiales Retorno Eventos", foto: "./eva.jpg" },
+        { dia: "viernes", hora: 20, nombre: "Sin Locutor", programa: "Programacion habitual", foto: "./fm.jpg" },
         { dia: "miércoles", hora: 18, nombre: "Sin Locutor", programa: "Programacion Habitual", foto: "./fm.jpg" },
-        { dia: "viernes", hora: 16, nombre: "Oscar Almiron", programa: "Especiales Retorno Eventos", foto: "./oscar.jpg" },
-        { dia: "sabado", hora: 8, nombre: "Ariel Brollo", programa: "A Puro Folclore", foto: "./ariel.jpg" },
-        { dia: "sabado", hora: 12, nombre: "Ismael Torres", programa: "Sobremesa Chamamecera", foto: "./fm.jpg" },
-        { dia: "sabado", hora: 14, nombre: "Iglesia Evangelica", programa: "Ministerio Jesus Nueva Vida", foto: "./fm.jpg" },
-        { dia: "sabado", hora: 17, nombre: "Iglesia Evangelica", programa: "Iglesia Asamblea de Dios", foto: "./fm.jpg" },
+        { dia: "sábado", hora: 8, nombre: "Ariel Brollo", programa: "A Puro Folclore", foto: "./ariel.jpg" },
+        { dia: "sábado", hora: 8, nombre: "Abel Fernandez", programa: "Popularisimo", foto: "./ariel.jpg" },
+        { dia: "sábado", hora: 12, nombre: "Ismael Torres", programa: "Sobremesa Chamamecera", foto: "./fm.jpg" },
+        { dia: "sábado", hora: 14, nombre: "Iglesia Evangelica", programa: "Ministerio Jesus Nueva Vida", foto: "./fm.jpg" },
+        { dia: "sábado", hora: 17, nombre: "Iglesia Evangelica", programa: "Iglesia Asamblea de Dios", foto: "./fm.jpg" },
     ];
 
-    // Lista de publicidades (puedes añadir más imágenes)
+    // Publicidades
     const publicidades = [
         { src: "./publcita.png", alt: "Publicidad 1" },
         { src: "./japo.jpg", alt: "Publicidad 2" },
@@ -59,22 +59,28 @@ const Inicio = () => {
         return locutor || { nombre: "Programacion", programa: "Sin Programa", foto: "/fm.jpg" };
     };
 
-    // Actualiza el locutor y programa actuales
     useEffect(() => {
-        const locutor = obtenerLocutorActual();
-        setLocutorActual(locutor);
-        setProgramaActual(locutor.programa);
+        const actualizarLocutor = () => {
+            const locutor = obtenerLocutorActual();
+            setLocutorActual((prevLocutor) => {
+                // Solo actualiza si el locutor cambió para evitar renders innecesarios
+                return prevLocutor?.nombre !== locutor.nombre ? locutor : prevLocutor;
+            });
+            setProgramaActual((prevPrograma) => {
+                return prevPrograma !== locutor.programa ? locutor.programa : prevPrograma;
+            });
+        };
+
+        actualizarLocutor(); // Llamado inicial
 
         const intervalo = setInterval(() => {
-            const locutor = obtenerLocutorActual();
-            setLocutorActual(locutor);
-            setProgramaActual(locutor.programa);
-        }, 60 * 60 * 1000); // Actualiza cada hora
+            actualizarLocutor();
+        }, 60000); // Verifica cada minuto
 
         return () => clearInterval(intervalo);
     }, []);
 
-    // Cambiar publicidad cada 20 segundos
+    // Publicidades
     useEffect(() => {
         const intervaloPublicidad = setInterval(() => {
             setCurrentAdIndex((prevIndex) => (prevIndex + 1) % publicidades.length);
@@ -121,7 +127,7 @@ const Inicio = () => {
                     </div>
                 )}
 
-                {/* Carrusel de Publicidades */}
+                {/* Publicidades */}
                 <div className="ads-container">
                     <img
                         src={publicidades[currentAdIndex].src}
