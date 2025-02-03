@@ -11,11 +11,11 @@ const Inicio = () => {
 
     // Lista de locutores y programas según horario
     const locutores = [
-        { dia: "lunes", hora: 9, nombre: "Oscar Almiron", programa: "Lo Mas Escuchado", foto: "./oscar.jpg" },
-        { dia: "martes", hora: 9, nombre: "Oscar Almiron", programa: "Lo Mas Escuchado", foto: "./oscar.jpg" },
-        { dia: "miércoles", hora: 9, nombre: "Oscar Almiron", programa: "Lo Mas Escuchado", foto: "./oscar.jpg" },
-        { dia: "jueves", hora: 9, nombre: "Oscar Almiron", programa: "Lo Mas Escuchado", foto: "./oscar.jpg" },
-        { dia: "viernes", hora: 9, nombre: "Oscar Almiron", programa: "Lo Mas Escuchado", foto: "./oscar.jpg" },
+        { dia: "lunes", hora: 10, nombre: "Oscar Almiron", programa: "Lo Mas Escuchado", foto: "./oscar.jpg" },
+        { dia: "martes", hora: 10, nombre: "Oscar Almiron", programa: "Lo Mas Escuchado", foto: "./oscar.jpg" },
+        { dia: "miércoles", hora: 10, nombre: "Oscar Almiron", programa: "Lo Mas Escuchado", foto: "./oscar.jpg" },
+        { dia: "jueves", hora: 10, nombre: "Oscar Almiron", programa: "Lo Mas Escuchado", foto: "./oscar.jpg" },
+        { dia: "viernes", hora: 10, nombre: "Oscar Almiron", programa: "Lo Mas Escuchado", foto: "./oscar.jpg" },
         { dia: "lunes", hora: 12, nombre: "Sin Locutor", programa: "Programacion Habitual", foto: "./fm.jpg" },
         { dia: "martes", hora: 12, nombre: "Sin Locutor", programa: "Programacion Habitual", foto: "./fm.jpg" },
         { dia: "miércoles", hora: 12, nombre: "Sin Locutor", programa: "Programacion Habitual", foto: "./fm.jpg" },
@@ -26,7 +26,7 @@ const Inicio = () => {
         { dia: "viernes", hora: 20, nombre: "Sin Locutor", programa: "Programacion habitual", foto: "./fm.jpg" },
         { dia: "miércoles", hora: 18, nombre: "Sin Locutor", programa: "Programacion Habitual", foto: "./fm.jpg" },
         { dia: "sábado", hora: 8, nombre: "Ariel Brollo", programa: "A Puro Folclore", foto: "./ariel.jpg" },
-        { dia: "sábado", hora: 8, nombre: "Abel Fernandez", programa: "Popularisimo", foto: "./ariel.jpg" },
+        { dia: "sábado", hora: 10, nombre: "Abel Fernandez", programa: "Popularisimo", foto: "./abel.jpg" },
         { dia: "sábado", hora: 12, nombre: "Ismael Torres", programa: "Sobremesa Chamamecera", foto: "./fm.jpg" },
         { dia: "sábado", hora: 14, nombre: "Iglesia Evangelica", programa: "Ministerio Jesus Nueva Vida", foto: "./fm.jpg" },
         { dia: "sábado", hora: 17, nombre: "Iglesia Evangelica", programa: "Iglesia Asamblea de Dios", foto: "./fm.jpg" },
