@@ -177,7 +177,8 @@
 .locutor-programa {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #fff;
+  color: #000000;
+  background-color: #fff;
   margin-bottom: 3px;
 }
 
