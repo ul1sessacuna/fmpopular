@@ -13,13 +13,14 @@ const Inicio = () => {
     const locutores = [
         { dia: "lunes", hora: 10, nombre: "Oscar Almiron", programa: "Lo Mas Escuchado", foto: "./oscar.jpg" },
         { dia: "martes", hora: 10, nombre: "Oscar Almiron", programa: "Lo Mas Escuchado", foto: "./oscar.jpg" },
+        { dia: "martes", hora: 12, nombre: "Sin Locutor", programa: "Programacion Habitual", foto: "./fm.jpg" },
         { dia: "martes", hora: 18, nombre: "Gilda Prieto", programa: "Tiempo Real", foto: "./gildapietro.jpg" },
         { dia: "miércoles", hora: 10, nombre: "Oscar Almiron", programa: "Lo Mas Escuchado", foto: "./oscar.jpg" },
         { dia: "jueves", hora: 10, nombre: "Oscar Almiron", programa: "Lo Mas Escuchado", foto: "./oscar.jpg" },
         { dia: "jueves", hora: 18, nombre: "Gilda Prieto", programa: "Tiempo Real", foto: "./gildapietro.jpg" },
         { dia: "viernes", hora: 10, nombre: "Oscar Almiron", programa: "Lo Mas Escuchado", foto: "./oscar.jpg" },
         { dia: "lunes", hora: 12, nombre: "Sin Locutor", programa: "Programacion Habitual", foto: "./fm.jpg" },
-        { dia: "martes", hora: 12, nombre: "Sin Locutor", programa: "Programacion Habitual", foto: "./fm.jpg" },
+
         { dia: "miércoles", hora: 12, nombre: "Sin Locutor", programa: "Programacion Habitual", foto: "./fm.jpg" },
         { dia: "jueves", hora: 12, nombre: "Sin Locutor", programa: "Programacion Habitual", foto: "./fm.jpg" },
         { dia: "viernes", hora: 12, nombre: "Sin Locutor", programa: "Programacion Habitual", foto: "./fm.jpg" },
