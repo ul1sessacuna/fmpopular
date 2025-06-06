@@ -4,10 +4,16 @@ import './Programas.css';
 
 const Programas = () => {
     const programas = [
+        { dia: 'Lunes a Viernes', hora: '09:00 AM', nombre: 'El Fieston', conductor: 'Dani Leiva', foto: '/danileiva.jpg' },
         { dia: 'Lunes a Viernes', hora: '09:00 AM', nombre: 'Lo Mas Escuchado', conductor: 'Oscar Almiron', foto: '/oscar.jpg' },
-        { dia: 'Lunes, Martes y Miercoles', hora: '16:00 AM', nombre: 'Especiales Retorno Eventos', conductor: 'Oscar Almiron', foto: '/oscar.jpg' },
-        { dia: 'Sabado', hora: '08:00 AM', nombre: 'A Puro Folklore', conductor: 'Ariel Brollo', foto: '/ariel.jpg' },
-        { dia: 'Sabado', hora: '14:00 PM', nombre: 'Sobremesa Chamamecera', conductor: 'Ismael Torres', foto: '/fm.jpg' },
+        { dia: 'Martes', hora: '16:00 AM', nombre: 'Especiales Retorno Eventos', conductor: 'Eva Zapata', foto: '/evazapata.jpg' },
+        { dia: 'Sabado', hora: '09:00 AM', nombre: 'Popularisimo', conductor: 'Abel Fernandez', foto: '/pelusa.jpg' },
+        { dia: 'Martes, Jueves', hora: '16:00 PM', nombre: 'Tiempo Real', conductor: 'Gilda Prieto', foto: '/gilda1.jpg' },
+        { dia: 'Sabado', hora: '17:00 PM', nombre: 'Iglesia Asamblea de Dios', conductor: 'Integrantes', foto: '/iglesia.jpg' },
+        { dia: 'Lunes a Viernes', hora: '20:00 PM', nombre: 'Ayer Nomás', conductor: 'Marcelo Prado Lima', foto: '/ayernomas.jpg' },
+
+        { dia: 'Domingo', hora: '09:00 AM', nombre: 'A Puro Folklore', conductor: 'Ariel Brollo', foto: '/ariel1.jpg' },
+        { dia: 'Sabado', hora: '12:00 PM', nombre: 'Sobremesa Chamamecera', conductor: 'Ismael Torres', foto: '/ismael.jpg' },
     ];
 
     return (

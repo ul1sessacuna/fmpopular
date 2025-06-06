@@ -30,13 +30,15 @@ const Inicio = () => {
         { dia: "miércoles", hora: 12, nombre: "Sin Locutor", programa: "Programacion Habitual", foto: "./fm.jpg" },
         { dia: "viernes", hora: 12, nombre: "Sin Locutor", programa: "Programacion Habitual", foto: "./fm.jpg" },
         { dia: "lunes", hora: 18, nombre: "Sin Locutor", programa: "Programacion Habitual", foto: "./fm.jpg" },
-        { dia: "viernes", hora: 18, nombre: "Eva Zapata", programa: "Especiales Retorno Eventos", foto: "./eva.jpg" },
+        { dia: "martes", hora: 16, nombre: "Eva Zapata", programa: "Especiales Retorno Eventos", foto: "./eva.jpg" },
         { dia: "viernes", hora: 20, nombre: "Sin Locutor", programa: "Programacion habitual", foto: "./fm.jpg" },
         { dia: "miércoles", hora: 18, nombre: "Sin Locutor", programa: "Programacion Habitual", foto: "./fm.jpg" },
         { dia: "sábado", hora: 9, nombre: "Abel Fernandez", programa: "Popularisimo", foto: "./pelusa.jpg" },
         { dia: "sábado", hora: 12, nombre: "Ismael Torres", programa: "Sobremesa Chamamecera", foto: "./fm.jpg" },
-        { dia: "sábado", hora: 14, nombre: "Iglesia Evangelica", programa: "Ministerio Jesus Nueva Vida", foto: "./fm.jpg" },
-        { dia: "sábado", hora: 17, nombre: "Iglesia Evangelica", programa: "Iglesia Asamblea de Dios", foto: "./fm.jpg" },
+        { dia: "sábado", hora: 17, nombre: "Iglesia Evangelica", programa: "Iglesia Asamblea de Dios", foto: "./iglesia.jpg" },
+        { dia: "domingo", hora: 9, nombre: "Ariel Brollo", programa: "A Puro Folklore", foto: "./ariel1.jpg" },
+        { dia: "domingo", hora: 11, nombre: "Sin Locutor", programa: "Programacion habitual", foto: "./fm.jpg" },
+
     ];
 
     // Publicidades
