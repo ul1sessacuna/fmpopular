@@ -51,10 +51,10 @@ const Inicio = () => {
     // Publicidades
     const publicidades = [
         { src: "./publcita.png", alt: "Publicidad 1" },
-        { src: "./japo.jpg", alt: "Publicidad 2" },
+        { src: "./japones.png", alt: "Publicidad 2" },
         { src: "./hobby.png", alt: "Publicidad 3" },
         { src: "./norma.png", alt: "Publicidad 4" },
-        { src: "./buhosss.png", alt: "Publicidad 5" },
+        // { src: "./buhosss.png", alt: "Publicidad 5" },
         // { src: "./epica.png", alt: "Publicidad 4" },
         // { src: "./libreria.png", alt: "Publicidad 4" },
         // { src: "./multirubro.png", alt: "Publicidad 4" },

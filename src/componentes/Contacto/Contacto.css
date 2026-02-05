@@ -142,3 +142,10 @@
         font-size: 0.9rem;
     }
 }
+.whatsapp-link {
+    text-decoration: none;
+    color: inherit; /* Mantiene el color que ya tenías */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
