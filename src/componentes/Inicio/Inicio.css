@@ -265,3 +265,62 @@
   border-radius: 10px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
 }
+
+
+/* Mensaje cuando la radio está offline */
+.offline-message {
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid #ffde59; /* Color amarillo similar a un logo de radio */
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    color: #fff;
+    max-width: 90%;
+    margin: 0 auto;
+    animation: fadeIn 0.8s ease;
+}
+
+.offline-message i {
+    color: #ff4d4d; /* Rojo para el icono de micrófono tachado */
+    margin-bottom: 8px;
+}
+
+.offline-message h3 {
+    margin: 5px 0;
+    font-size: 1.2rem;
+    color: #ffde59;
+}
+
+.offline-message p {
+    font-size: 0.9rem;
+    margin: 0;
+    opacity: 0.8;
+}
+
+/* Animación para que el mensaje aparezca suavemente */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Estilo para el badge de EN VIVO */
+.en-vivo {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: red;
+    color: white;
+    padding: 2px 8px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 4px;
+    animation: blink 1.5s infinite;
+    z-index: 10;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0.4; }
+    100% { opacity: 1; }
+}
