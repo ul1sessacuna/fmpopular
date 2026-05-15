@@ -3,39 +3,52 @@ import { Link } from 'react-router-dom';
 import "./Inicio.css";
 import "font-awesome/css/font-awesome.min.css";
 
-const LOCUTOR_DEFAULT = { 
-    nombre: "Sin Locutor", 
-    programa: "Programación Habitual", 
-    foto: "./fm.jpg",
-    online: false // Marcamos que por defecto no hay vivo
-};
+const LOCUTOR_DEFAULT = { nombre: "Sin Locutor", programa: "Programacion Habitual", foto: "./fm.jpg" };
 
 const Inicio = () => {
     const [isPlaying, setIsPlaying] = useState(false);
-    const [locutorActual, setLocutorActual] = useState(LOCUTOR_DEFAULT);
-    const [programaActual, setProgramaActual] = useState(LOCUTOR_DEFAULT.programa);
+    const [locutorActual, setLocutorActual] = useState(null);
+    const [programaActual, setProgramaActual] = useState("");
     const [currentAdIndex, setCurrentAdIndex] = useState(0);
 
     const locutores = [
-        { dia: "lunes", horaInicio: 9, horaFin: 12, nombre: "Oscar Almiron", programa: "Lo Mas Escuchado", foto: "./oscar.jpg" },
-        { dia: "lunes", horaInicio: 12, horaFin: 16, nombre: "Sin Locutor", programa: "Programacion Habitual", foto: "./fm.jpg" },
-        { dia: "lunes", horaInicio: 18, horaFin: 24, nombre: "Sin Locutor", programa: "Programacion Habitual", foto: "./fm.jpg" },
-        { dia: "martes", horaInicio: 9, horaFin: 12, nombre: "Oscar Almiron", programa: "Lo Mas Escuchado", foto: "./oscar.jpg" },
-        { dia: "martes", horaInicio: 16, horaFin: 18, nombre: "Gilda Prieto", programa: "Tiempo Real", foto: "./gildapietro.jpg" },
-        { dia: "miércoles", horaInicio: 9, horaFin: 12, nombre: "Oscar Almiron", programa: "Lo Mas Escuchado", foto: "./oscar.jpg" },
-        { dia: "jueves", horaInicio: 9, horaFin: 12, nombre: "Oscar Almiron", programa: "Lo Mas Escuchado", foto: "./oscar.jpg" },
-        { dia: "viernes", horaInicio: 8, horaFin: 12, nombre: "Oscar Almiron", programa: "Lo Mas Escuchado", foto: "./oscar.jpg" },
-        { dia: "sábado", horaInicio: 9, horaFin: 12, nombre: "Abel Fernandez", programa: "Popularisimo", foto: "./pelusa.jpg" },
-        { dia: "sábado", horaInicio: 12, horaFin: 17, nombre: "Ismael Torres", programa: "Sobremesa Chamamecera", foto: "./fm.jpg" },
-        { dia: "domingo", horaInicio: 8, horaFin: 10, nombre: "Ariel Brollo", programa: "A Puro Folklore", foto: "./ariel1.jpg" },
-        { dia: "domingo", horaInicio: 10, horaFin: 12, nombre: "Iglesia Evangelica", programa: "Iglesia Asamblea de Dios", foto: "./iglesia.jpg" },
+        { dia: "lunes", horaInicio: 9, horaFin: 12, nombre: "Oscar Almiron",       programa: "Lo Mas Escuchado",               foto: "./oscar.jpg" },
+        { dia: "lunes", horaInicio: 12, horaFin: 16, nombre: "Sin Locutor",         programa: "Programacion Habitual",          foto: "./fm.jpg" },
+        { dia: "lunes", horaInicio: 16, horaFin: 18, nombre: "Eva Zapata",          programa: "Abriendo Tranqueras",            foto: "./eva.jpg" },
+        { dia: "lunes", horaInicio: 18, horaFin: 24, nombre: "Sin Locutor",         programa: "Programacion Habitual",          foto: "./fm.jpg" },
+
+        { dia: "martes", horaInicio: 9, horaFin: 12, nombre: "Oscar Almiron",       programa: "Lo Mas Escuchado",              foto: "./oscar.jpg" },
+        { dia: "martes", horaInicio: 12, horaFin: 16, nombre: "Sin Locutor",         programa: "Programacion Habitual",         foto: "./fm.jpg" },
+        { dia: "martes", horaInicio: 16, horaFin: 18, nombre: "Eva Zapata",          programa: "Abriendo Tranqueras",           foto: "./eva.jpg" },
+        { dia: "martes", horaInicio: 16, horaFin: 18, nombre: "Gilda Prieto",        programa: "Tiempo Real",                   foto: "./gildapietro.jpg" },
+
+        { dia: "miércoles", horaInicio: 9, horaFin: 12, nombre: "Oscar Almiron",    programa: "Lo Mas Escuchado",              foto: "./oscar.jpg" },
+        { dia: "miércoles", horaInicio: 12, horaFin: 16, nombre: "Sin Locutor",      programa: "Programacion Habitual",         foto: "./fm.jpg" },
+        { dia: "miércoles", horaInicio: 16, horaFin: 18, nombre: "Eva Zapata",       programa: "Abriendo Tranqueras",           foto: "./eva.jpg" },
+        { dia: "miércoles", horaInicio: 18, horaFin: 24, nombre: "Sin Locutor",      programa: "Programacion Habitual",         foto: "./fm.jpg" },
+
+        { dia: "jueves", horaInicio: 9, horaFin: 12, nombre: "Oscar Almiron",        programa: "Lo Mas Escuchado",             foto: "./oscar.jpg" },
+        { dia: "jueves", horaInicio: 12, horaFin: 16, nombre: "Sin Locutor",          programa: "Programacion Habitual",        foto: "./fm.jpg" },
+        { dia: "jueves", horaInicio: 16, horaFin: 18, nombre: "Eva Zapata",           programa: "Abriendo Tranqueras",          foto: "./eva.jpg" },
+
+        { dia: "viernes", horaInicio: 8, horaFin: 12, nombre: "Oscar Almiron",       programa: "Lo Mas Escuchado",             foto: "./oscar.jpg" },
+        { dia: "viernes", horaInicio: 11,  horaFin: 13, nombre: "Ariel Brollo",       programa: "A Puro Folklore",              foto: "./ariel1.jpg" },
+        { dia: "viernes", horaInicio: 13, horaFin: 16, nombre: "Sin Locutor",         programa: "Programacion Habitual",        foto: "./fm.jpg" },
+        { dia: "viernes", horaInicio: 16, horaFin: 20, nombre: "Eva Zapata",          programa: "Abriendo Tranqueras",          foto: "./eva.jpg" },
+        { dia: "viernes", horaInicio: 20, horaFin: 24, nombre: "Sin Locutor",         programa: "Programacion Habitual",        foto: "./fm.jpg" },
+
+        { dia: "sábado", horaInicio: 9,  horaFin: 12, nombre: "Abel Fernandez",      programa: "Popularisimo",                 foto: "./pelusa.jpg" },
+        { dia: "sábado", horaInicio: 12, horaFin: 17, nombre: "Ismael Torres",        programa: "Sobremesa Chamamecera",        foto: "./fm.jpg" },
+        { dia: "sábado", horaInicio: 17, horaFin: 24, nombre: "Iglesia Evangelica",   programa: "Iglesia Asamblea de Dios",    foto: "./iglesia.jpg" },
+
+        { dia: "domingo", horaInicio: 11, horaFin: 24, nombre: "Sin Locutor",         programa: "Programacion Habitual",        foto: "./fm.jpg" },
     ];
 
     const publicidades = [
         { src: "./publcita.png", alt: "Publicidad 1" },
-        { src: "./japones.png", alt: "Publicidad 2" },
-        { src: "./hobby.png", alt: "Publicidad 3" },
-        { src: "./norma.png", alt: "Publicidad 4" },
+        { src: "./japones.png",  alt: "Publicidad 2" },
+        { src: "./hobby.png",    alt: "Publicidad 3" },
+        { src: "./norma.png",    alt: "Publicidad 4" },
     ];
 
     const obtenerLocutorActual = () => {
@@ -47,18 +60,14 @@ const Inicio = () => {
             (l) => l.dia === diaActual && horaActual >= l.horaInicio && horaActual < l.horaFin
         );
 
-        // Si encontramos un locutor y NO es "Sin Locutor", lo marcamos como online
-        if (locutor && locutor.nombre !== "Sin Locutor") {
-            return { ...locutor, online: true };
-        }
-        return LOCUTOR_DEFAULT;
+        return locutor || LOCUTOR_DEFAULT;
     };
 
     useEffect(() => {
         const actualizarLocutor = () => {
             const locutor = obtenerLocutorActual();
-            setLocutorActual(locutor);
-            setProgramaActual(locutor.programa);
+            setLocutorActual((prev) => (prev?.nombre !== locutor.nombre ? locutor : prev));
+            setProgramaActual((prev) => (prev !== locutor.programa ? locutor.programa : prev));
         };
 
         actualizarLocutor();
@@ -73,6 +82,8 @@ const Inicio = () => {
         return () => clearInterval(intervaloPublicidad);
     }, [publicidades.length]);
 
+    const handleClick = () => setIsPlaying(true);
+
     return (
         <div className="inicio-container">
             <div className="overlay"></div>
@@ -86,28 +97,20 @@ const Inicio = () => {
 
                 {!isPlaying ? (
                     <div className="button-container">
-                        <button className="play-button" onClick={() => setIsPlaying(true)}>
+                        <button className="play-button" onClick={handleClick}>
                             ESCUCHAR AHORA!
                         </button>
                     </div>
                 ) : (
                     <div className="player-container">
-                        {locutorActual.online ? (
-                            <iframe
-                                src="https://server6.hostradios.com/cp/widgets/player/single/?p=8648"
-                                height="110"
-                                width="100%"
-                                scrolling="no"
-                                style={{ border: "none" }}
-                                title="Reproductor FM Popular"
-                            ></iframe>
-                        ) : (
-                            <div className="offline-message">
-                                <i className="fa fa-microphone-slash fa-2x"></i>
-                                <h3>FM POPULAR FUERA DE AIRE</h3>
-                                <p>Regresamos con nuestra programación en vivo a la brevedad.</p>
-                            </div>
-                        )}
+                        <iframe
+                            src="https://server6.hostradios.com/cp/widgets/player/single/?p=8648"
+                            height="110"
+                            width="100%"
+                            scrolling="no"
+                            style={{ border: "none" }}
+                            title="Reproductor FM Popular"
+                        ></iframe>
                     </div>
                 )}
 
@@ -122,7 +125,7 @@ const Inicio = () => {
                 {locutorActual && (
                     <div className="locutor-container">
                         <div className="locutor-foto-container">
-                            {locutorActual.online && <span className="en-vivo">EN VIVO</span>}
+                            <span className="en-vivo">EN VIVO</span>
                             <img
                                 src={locutorActual.foto}
                                 alt={locutorActual.nombre}

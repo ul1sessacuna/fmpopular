@@ -69,27 +69,144 @@
 
 
 .button-container .play-button {
-  padding: 10px 20px;
+  padding: 15px 30px;
   width: 20vw;
   font-size: 1.2rem;
   font-weight: bold;
   color: #0f000c;
-  background: #ffffff;
+  background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
   border: none;
   border-radius: 50px;
   cursor: pointer;
   text-transform: uppercase;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  letter-spacing: 1px;
 }
 
 .button-container .play-button:hover {
-  background: #dbdbdb;
+  background: linear-gradient(135deg, #f0f0f0 0%, #ffffff 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.button-container .play-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Contenedor del reproductor mejorado */
+.player-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  animation: slideDown 0.5s ease-out;
+}
+
+.connection-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  font-size: 0.9rem;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 8px 12px;
+  border-radius: 20px;
+  backdrop-filter: blur(5px);
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.status-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  animation: pulse-indicator 2s infinite;
+}
+
+.status-indicator.online {
+  background-color: #4ade80;
+  box-shadow: 0 0 8px rgba(74, 222, 128, 0.6);
+}
+
+.status-indicator.offline {
+  background-color: #ff6b6b;
+  box-shadow: 0 0 8px rgba(255, 107, 107, 0.6);
+}
+
+@keyframes pulse-indicator {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+.status-text {
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.close-player-btn {
+  position: absolute;
+  top: -35px;
+  right: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(5px);
+}
+
+.close-player-btn:hover {
+  background: rgba(255, 255, 255, 0.4);
+  transform: rotate(90deg);
+}
+
+.player-container {
+  background: linear-gradient(135deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.05) 100%);
+  border-radius: 20px;
+  padding: 18px 20px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255,255,255,0.2);
+  width: 320px;
+  margin: 0 auto;
+  animation: slideDown 0.4s ease;
 }
 
 .player-container iframe {
-  width: 90%;
-  max-width: 400px;
+  width: 100%;
   height: 110px;
+  border-radius: 12px;
+  display: block;
 }
 
 .social-media-container {
@@ -120,6 +237,8 @@
    
   .button-container .play-button {
     width: 50vw;
+    padding: 12px 20px;
+    font-size: 1rem;
   }
   .text-container p {
       font-size: 1.6rem;
@@ -127,15 +246,55 @@
       font-family: 'Poppins', sans-serif;
   }
 
-  .button-container .play-button {
-      font-size: 1rem;
-  }
-
   .social-icon {
       font-size: 1.5rem;
   }
- 
-  
+
+  .player-wrapper {
+    margin-top: 20px;
+  }
+
+  .close-player-btn {
+    top: -35px;
+    width: 30px;
+    height: 30px;
+    font-size: 1.2rem;
+  }
+
+  .connection-status {
+    font-size: 0.8rem;
+    padding: 6px 10px;
+  }
+
+  .status-indicator {
+    width: 8px;
+    height: 8px;
+  }
+
+  .player-container {
+    padding: 12px;
+    width: 90vw;
+  }
+
+  .offline-message {
+    padding: 20px 15px;
+  }
+
+  .offline-icon-wrapper {
+    font-size: 2.5rem;
+  }
+
+  .offline-icon-wrapper .fa-slash {
+    font-size: 3rem;
+  }
+
+  .offline-message h3 {
+    font-size: 1.1rem;
+  }
+
+  .offline-message p {
+    font-size: 0.9rem;
+  }
 }
 
 
@@ -189,20 +348,9 @@
   color: #fff;
 }
 
-.en-vivo {
-  position: absolute;
-  bottom: 70px;
-  left: 50%;
-  width: auto;
-  transform: translateX(-50%);
-  background-color: red;
-  color: white;
-  font-size: 10px;
-  font-weight: bold;
-  padding: 5px 8px;
-  border-radius: 20px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
-  z-index: 1;
+.locutor-foto-container {
+  position: relative;
+  display: inline-block;
 }
 
 
@@ -219,10 +367,8 @@
   }
 
   .en-vivo {
-    width: 15vw;
-    padding: 4px 8px;
+    padding: 2px 6px;
     font-size: 8px;
-    bottom: 51px;
   }
 
   .locutor-programa {
@@ -267,54 +413,109 @@
 }
 
 
-/* Mensaje cuando la radio está offline */
+/* Mensaje cuando la radio está offline - MEJORADO */
 .offline-message {
-    background: rgba(0, 0, 0, 0.6);
-    border: 2px solid #ffde59; /* Color amarillo similar a un logo de radio */
-    border-radius: 12px;
-    padding: 15px;
-    text-align: center;
-    color: #fff;
-    max-width: 90%;
-    margin: 0 auto;
-    animation: fadeIn 0.8s ease;
+  background: linear-gradient(135deg, rgba(20, 20, 40, 0.95) 0%, rgba(40, 10, 40, 0.95) 100%);
+  border: 2px solid #ff6b6b;
+  border-radius: 15px;
+  padding: 30px 25px;
+  text-align: center;
+  color: #fff;
+  max-width: 90%;
+  margin: 0 auto;
+  animation: fadeInScale 0.6s ease;
+  box-shadow: 0 8px 32px rgba(255, 107, 107, 0.2);
 }
 
-.offline-message i {
-    color: #ff4d4d; /* Rojo para el icono de micrófono tachado */
-    margin-bottom: 8px;
+.offline-icon-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 15px;
+  font-size: 3rem;
+  color: #ff6b6b;
+  animation: pulse 2s infinite;
+}
+
+.offline-icon-wrapper .fa-wifi {
+  display: block;
+}
+
+.offline-icon-wrapper .fa-slash {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  color: #ff6b6b;
+  font-size: 3.5rem;
+  font-weight: bold;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
 }
 
 .offline-message h3 {
-    margin: 5px 0;
-    font-size: 1.2rem;
-    color: #ffde59;
+  margin: 15px 0 10px 0;
+  font-size: 1.4rem;
+  color: #ff6b6b;
+  font-weight: bold;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .offline-message p {
-    font-size: 0.9rem;
-    margin: 0;
-    opacity: 0.8;
+  font-size: 1rem;
+  margin: 8px 0 12px 0;
+  opacity: 0.95;
+  line-height: 1.5;
 }
 
-/* Animación para que el mensaje aparezca suavemente */
-@keyframes fadeIn {
-    from { opacity: 0; transform: scale(0.95); }
-    to { opacity: 1; transform: scale(1); }
+.offline-tips {
+  margin-top: 15px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 107, 107, 0.3);
+}
+
+.offline-tips small {
+  display: block;
+  font-size: 0.85rem;
+  opacity: 0.85;
+  color: #ffb3b3;
+  font-style: italic;
+}
+
+/* Animación mejorada para que el mensaje aparezca */
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
 }
 
 /* Estilo para el badge de EN VIVO */
 .en-vivo {
     position: absolute;
-    top: 10px;
+    bottom: -10px;
     left: 50%;
     transform: translateX(-50%);
     background-color: red;
     color: white;
-    padding: 2px 8px;
-    font-size: 12px;
+    padding: 2px 10px;
+    font-size: 9px;
     font-weight: bold;
-    border-radius: 4px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+    white-space: nowrap;
     animation: blink 1.5s infinite;
     z-index: 10;
 }
